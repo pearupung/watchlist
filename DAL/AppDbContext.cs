@@ -1,8 +1,9 @@
 ﻿using System;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace DAL
 {
-    public class AppDbContext
+    public class AppDbContext: IdentityDbContext
     {
     }
 }

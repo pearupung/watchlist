@@ -1,7 +1,8 @@
+using Microsoft.AspNetCore.Identity;
+
 namespace Domain
 {
-    public class AppRole
+    public class AppRole: IdentityRole<int>
     {
-        
     }
 }
