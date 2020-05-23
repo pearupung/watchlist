@@ -8,7 +8,7 @@ namespace Domain
     {
         
         public List<HabitLoop> HabitLoops { get; set; }
-        public List<Action> HabitLoopActions { get; set; }
+        public List<PupilAction> HabitLoopActions { get; set; }
         public List<Feedback> HabitLoopFeedbacks { get; set; }
         public List<Trigger> HabitLoopTriggers { get; set; }
         public List<Session> Sessions { get; set; }

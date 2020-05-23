@@ -1,8 +1,8 @@
 namespace Domain
 {
-    public class WatchListHabiLoop
+    public class WatchListHabitLoop
     {
-        public int WatchListHabitLoop { get; set; }
+        public int WatchListHabitLoopId { get; set; }
 
         public int HabitLoopId { get; set; }
         public HabitLoop HabitLoop { get; set; }

@@ -11,6 +11,6 @@ namespace Domain
         public int PupilId { get; set; }
         public Pupil Pupil { get; set; }
 
-        public List<WatchListHabiLoop> WatchListHabiLoops { get; set; }        
+        public List<WatchListHabitLoop> WatchListHabiLoops { get; set; }        
     }
 }

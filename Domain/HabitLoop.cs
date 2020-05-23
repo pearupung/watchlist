@@ -7,12 +7,14 @@ namespace Domain
     {
         public int HabitLoopId { get; set; }
 
+        public int PupilId { get; set; }
+        public Pupil Pupil { get; set; }
         
-        public List<WatchListHabiLoop> WatchListHabitLoop { get; set; }
+        public List<WatchListHabitLoop> WatchListHabitLoop { get; set; }
 
         public List<Trigger> HabitLoopTriggers { get; set; }
-        public List<Action> HabitLoopActions { get; set; }
+        public List<PupilAction> HabitLoopActions { get; set; }
 
-        public Dictionary<Tuple<Trigger, Action>, Feedback> Feedbacks { get; set; }
+        public List<Feedback> Feedbacks { get; set; }
     }
 }
