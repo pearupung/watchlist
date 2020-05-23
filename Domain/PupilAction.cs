@@ -1,6 +1,6 @@
 namespace Domain
 {
-    public class Action
+    public class PupilAction
     {
         public int ActionId { get; set; }
 
