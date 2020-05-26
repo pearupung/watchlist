@@ -1,0 +1,64 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.0.0
+MinimumVisualStudioVersion = 16.0.0.0
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorSignalRApp.Server", "Server\BlazorSignalRApp.Server.csproj", "{FE580752-BE88-469A-8705-605399DBEDCA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorSignalRApp.Client", "Client\BlazorSignalRApp.Client.csproj", "{7A6D928E-FA75-43BD-AFE2-8505EA592DCE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorSignalRApp.Shared", "Shared\BlazorSignalRApp.Shared.csproj", "{FE3298D6-E301-413F-B31C-2B676B25BCBB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A6D928E-FA75-43BD-AFE2-8505EA592DCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A6D928E-FA75-43BD-AFE2-8505EA592DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A6D928E-FA75-43BD-AFE2-8505EA592DCE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7A6D928E-FA75-43BD-AFE2-8505EA592DCE}.Debug|x64.Build.0 = Debug|Any CPU
+		{7A6D928E-FA75-43BD-AFE2-8505EA592DCE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7A6D928E-FA75-43BD-AFE2-8505EA592DCE}.Debug|x86.Build.0 = Debug|Any CPU
+		{7A6D928E-FA75-43BD-AFE2-8505EA592DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A6D928E-FA75-43BD-AFE2-8505EA592DCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A6D928E-FA75-43BD-AFE2-8505EA592DCE}.Release|x64.ActiveCfg = Release|Any CPU
+		{7A6D928E-FA75-43BD-AFE2-8505EA592DCE}.Release|x64.Build.0 = Release|Any CPU
+		{7A6D928E-FA75-43BD-AFE2-8505EA592DCE}.Release|x86.ActiveCfg = Release|Any CPU
+		{7A6D928E-FA75-43BD-AFE2-8505EA592DCE}.Release|x86.Build.0 = Release|Any CPU
+		{FE580752-BE88-469A-8705-605399DBEDCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE580752-BE88-469A-8705-605399DBEDCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE580752-BE88-469A-8705-605399DBEDCA}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FE580752-BE88-469A-8705-605399DBEDCA}.Debug|x64.Build.0 = Debug|Any CPU
+		{FE580752-BE88-469A-8705-605399DBEDCA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FE580752-BE88-469A-8705-605399DBEDCA}.Debug|x86.Build.0 = Debug|Any CPU
+		{FE580752-BE88-469A-8705-605399DBEDCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE580752-BE88-469A-8705-605399DBEDCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE580752-BE88-469A-8705-605399DBEDCA}.Release|x64.ActiveCfg = Release|Any CPU
+		{FE580752-BE88-469A-8705-605399DBEDCA}.Release|x64.Build.0 = Release|Any CPU
+		{FE580752-BE88-469A-8705-605399DBEDCA}.Release|x86.ActiveCfg = Release|Any CPU
+		{FE580752-BE88-469A-8705-605399DBEDCA}.Release|x86.Build.0 = Release|Any CPU
+		{FE3298D6-E301-413F-B31C-2B676B25BCBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE3298D6-E301-413F-B31C-2B676B25BCBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE3298D6-E301-413F-B31C-2B676B25BCBB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FE3298D6-E301-413F-B31C-2B676B25BCBB}.Debug|x64.Build.0 = Debug|Any CPU
+		{FE3298D6-E301-413F-B31C-2B676B25BCBB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FE3298D6-E301-413F-B31C-2B676B25BCBB}.Debug|x86.Build.0 = Debug|Any CPU
+		{FE3298D6-E301-413F-B31C-2B676B25BCBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE3298D6-E301-413F-B31C-2B676B25BCBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE3298D6-E301-413F-B31C-2B676B25BCBB}.Release|x64.ActiveCfg = Release|Any CPU
+		{FE3298D6-E301-413F-B31C-2B676B25BCBB}.Release|x64.Build.0 = Release|Any CPU
+		{FE3298D6-E301-413F-B31C-2B676B25BCBB}.Release|x86.ActiveCfg = Release|Any CPU
+		{FE3298D6-E301-413F-B31C-2B676B25BCBB}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AF9CFECD-21D0-487C-B31A-15A796052E2F}
+	EndGlobalSection
+EndGlobal

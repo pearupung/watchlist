@@ -1,8 +1,48 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Identity
+@using Domain
+@inject SignInManager<Pupil> SignInManager
+@inject UserManager<Pupil> UserManager
+@model WebApp.ViewModels.HomeIndexDTO
+@{
     ViewData["Title"] = "Home Page";
 }
 
+
+
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    @if (SignInManager.IsSignedIn(User))
+        {
+            <ol>
+            @foreach (var instructor in @Model.Instructors)
+            {
+                <li>
+                    @instructor.InstructorName
+                </li>
+            }
+    </ol>
+    }
+        else
+        {
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+            </li>
+            <form id="account" method="post">
+                <h4>Write yourself up as an instructor!</h4>
+                <hr />
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="@Model.InstructorName"></label>
+                    <input asp-for="@Model.InstructorName" class="form-control" />
+                    <span asp-validation-for="@Model.InstructorName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <button  type="submit" asp-action="" class="btn btn-primary">Register as an instructor</button>
+                </div>
+            </form>
+        }
+    
 </div>

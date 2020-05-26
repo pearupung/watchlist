@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <UserSecretsId>aspnet-BlazorWebApp-6674D9C4-9DAC-4B75-BD4B-EB459BD865E6</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.2"/>
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.2"/>
+        <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.2"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.2"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.2"/>
+    </ItemGroup>
+
+</Project>
