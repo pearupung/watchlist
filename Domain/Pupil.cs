@@ -13,5 +13,8 @@ namespace Domain
         public List<Trigger> HabitLoopTriggers { get; set; }
         public List<Session> Sessions { get; set; }
         public List<WatchList> WatchLists { get; set; }
+
+        public int AppUserId { get; set; }
+        public AppUser AppUser { get; set; }
     }
 }

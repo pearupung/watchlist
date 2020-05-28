@@ -1,13 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
 using DAL;
 using Domain;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.Extensions.Logging;
+using WebApp.Hubs;
 using WebApp.Models;
 using WebApp.ViewModels;
 
@@ -17,11 +17,13 @@ namespace WebApp.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly AppDbContext _context;
+        private readonly IHubContext<InstructorListHub> _hubContext;
 
-        public HomeController(ILogger<HomeController> logger, AppDbContext context)
+        public HomeController(ILogger<HomeController> logger, AppDbContext context, IHubContext<InstructorListHub> hubContext)
         {
             _logger = logger;
             _context = context;
+            _hubContext = hubContext;
         }
 
         [BindProperty]
@@ -31,7 +33,8 @@ namespace WebApp.Controllers
         {
             HomeIndexDto.Instructors = _context.Instructors.Select(i => new InstructorDTO()
             {
-                InstructorName = i.InstructorName
+                InstructorName = i.InstructorName,
+                RegisterCode = i.RegisterCode
             }).ToList();
             return View(HomeIndexDto);
         }
@@ -43,17 +46,31 @@ namespace WebApp.Controllers
             {
                 return View(homeIndexDto);
             }
-
-            _context.Instructors.Add(new Instructor()
-            {
-                InstructorName = HomeIndexDto.InstructorName
-            });
+            var random = new Random();
+            var newInstructor = new Instructor();
+            newInstructor.InstructorName = HomeIndexDto.InstructorName;
+            newInstructor.Active = true;
+            newInstructor.RegisterCode = $"{random.Next(0, 10000):D4}";
+            _context.Instructors.Add(newInstructor);
             _context.SaveChanges();
+            _hubContext.Clients.All.SendAsync("NewInstructor", newInstructor);
             return Redirect("/Home/InstructorCode");
         }
 
         public IActionResult InstructorCode()
         {
+            return View();
+        }
+        
+        [HttpPost]
+        public IActionResult InstructorCode(HomeInstructorDTO dto)
+        {
+            _userManager.
+            if (!ModelState.IsValid)
+            {
+                return View(dto);
+            }
+            
             return View();
         }
 

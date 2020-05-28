@@ -6,14 +6,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{D06EE9C4-91CE-45D0-9800-42B3C03EEB2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{1AAF5C4D-A4D4-42EA-9E3E-F629CBB8EB2C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorSignalRApp.Server", "BlazorSignalRApp\Server\BlazorSignalRApp.Server.csproj", "{D20D9617-A943-4EEB-B971-A29923698D97}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorSignalRApp.Client", "BlazorSignalRApp\Client\BlazorSignalRApp.Client.csproj", "{BF14F356-8734-4907-8B85-F263BDD52B8D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorSignalRApp.Shared", "BlazorSignalRApp\Shared\BlazorSignalRApp.Shared.csproj", "{2D786F87-D600-4D55-8DC4-BD90DBCCC208}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,21 +24,5 @@ Global
 		{D06EE9C4-91CE-45D0-9800-42B3C03EEB2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D06EE9C4-91CE-45D0-9800-42B3C03EEB2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D06EE9C4-91CE-45D0-9800-42B3C03EEB2A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1AAF5C4D-A4D4-42EA-9E3E-F629CBB8EB2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1AAF5C4D-A4D4-42EA-9E3E-F629CBB8EB2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1AAF5C4D-A4D4-42EA-9E3E-F629CBB8EB2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1AAF5C4D-A4D4-42EA-9E3E-F629CBB8EB2C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D20D9617-A943-4EEB-B971-A29923698D97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D20D9617-A943-4EEB-B971-A29923698D97}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D20D9617-A943-4EEB-B971-A29923698D97}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D20D9617-A943-4EEB-B971-A29923698D97}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BF14F356-8734-4907-8B85-F263BDD52B8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BF14F356-8734-4907-8B85-F263BDD52B8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BF14F356-8734-4907-8B85-F263BDD52B8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BF14F356-8734-4907-8B85-F263BDD52B8D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2D786F87-D600-4D55-8DC4-BD90DBCCC208}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2D786F87-D600-4D55-8DC4-BD90DBCCC208}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2D786F87-D600-4D55-8DC4-BD90DBCCC208}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2D786F87-D600-4D55-8DC4-BD90DBCCC208}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
