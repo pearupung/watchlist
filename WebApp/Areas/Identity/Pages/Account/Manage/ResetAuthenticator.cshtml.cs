@@ -12,13 +12,13 @@ namespace WebApp.Areas.Identity.Pages.Account.Manage
 {
     public class ResetAuthenticatorModel : PageModel
     {
-        UserManager<Pupil> _userManager;
-        private readonly SignInManager<Pupil> _signInManager;
+        UserManager<AppUser> _userManager;
+        private readonly SignInManager<AppUser> _signInManager;
         ILogger<ResetAuthenticatorModel> _logger;
 
         public ResetAuthenticatorModel(
-            UserManager<Pupil> userManager,
-            SignInManager<Pupil> signInManager,
+            UserManager<AppUser> userManager,
+            SignInManager<AppUser> signInManager,
             ILogger<ResetAuthenticatorModel> logger)
         {
             _userManager = userManager;

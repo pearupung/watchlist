@@ -18,13 +18,13 @@ namespace WebApp.Areas.Identity.Pages.Account
     [AllowAnonymous]
     public class LoginModel : PageModel
     {
-        private readonly UserManager<Pupil> _userManager;
-        private readonly SignInManager<Pupil> _signInManager;
+        private readonly UserManager<AppUser> _userManager;
+        private readonly SignInManager<AppUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
 
-        public LoginModel(SignInManager<Pupil> signInManager, 
+        public LoginModel(SignInManager<AppUser> signInManager, 
             ILogger<LoginModel> logger,
-            UserManager<Pupil> userManager)
+            UserManager<AppUser> userManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;

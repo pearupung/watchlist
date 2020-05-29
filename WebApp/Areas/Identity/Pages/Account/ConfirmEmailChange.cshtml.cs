@@ -15,10 +15,10 @@ namespace WebApp.Areas.Identity.Pages.Account
     [AllowAnonymous]
     public class ConfirmEmailChangeModel : PageModel
     {
-        private readonly UserManager<Pupil> _userManager;
-        private readonly SignInManager<Pupil> _signInManager;
+        private readonly UserManager<AppUser> _userManager;
+        private readonly SignInManager<AppUser> _signInManager;
 
-        public ConfirmEmailChangeModel(UserManager<Pupil> userManager, SignInManager<Pupil> signInManager)
+        public ConfirmEmailChangeModel(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading.Tasks;
 using DAL;
 using Domain;
 using Microsoft.AspNetCore.Identity;
@@ -18,12 +19,14 @@ namespace WebApp.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly AppDbContext _context;
         private readonly IHubContext<InstructorListHub> _hubContext;
+        private UserManager<AppUser> _userManager;
 
-        public HomeController(ILogger<HomeController> logger, AppDbContext context, IHubContext<InstructorListHub> hubContext)
+        public HomeController(ILogger<HomeController> logger, AppDbContext context, IHubContext<InstructorListHub> hubContext, UserManager<AppUser> userManager)
         {
             _logger = logger;
             _context = context;
             _hubContext = hubContext;
+            _userManager = userManager;
         }
 
         [BindProperty]
@@ -63,14 +66,13 @@ namespace WebApp.Controllers
         }
         
         [HttpPost]
-        public IActionResult InstructorCode(HomeInstructorDTO dto)
+        public async Task<IActionResult> InstructorCode(HomeInstructorDTO dto)
         {
-            _userManager.
-            if (!ModelState.IsValid)
+            var user = await _userManager.GetUserAsync(User);
+            if (!ModelState.IsValid || !user.IsInstructor || !user.Instructor.RegisterCode.Equals(dto.EntryCode))
             {
                 return View(dto);
             }
-            
             return View();
         }
 

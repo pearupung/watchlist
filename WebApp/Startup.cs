@@ -2,7 +2,6 @@
 using DAL;
 using Domain;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -28,7 +27,7 @@ namespace WebApp
             
             services.AddDbContext<AppDbContext>(options =>
                 options.UseInMemoryDatabase("watchlistTestDb"));
-            services.AddDefaultIdentity<Pupil>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<AppDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();

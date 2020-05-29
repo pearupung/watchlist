@@ -4,8 +4,9 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Domain
 {
-    public class Pupil: IdentityUser<int>
+    public class Pupil
     {
+        public int PupilId { get; set; }
         
         public List<HabitLoop> HabitLoops { get; set; }
         public List<PupilAction> HabitLoopActions { get; set; }

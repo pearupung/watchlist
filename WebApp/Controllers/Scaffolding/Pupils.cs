@@ -22,7 +22,8 @@ namespace WebApp.Controllers
         // GET: Pupils
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Users.ToListAsync());
+            var appDbContext = _context.Pupils.Include(p => p.AppUser);
+            return View(await appDbContext.ToListAsync());
         }
 
         // GET: Pupils/Details/5
@@ -33,8 +34,9 @@ namespace WebApp.Controllers
                 return NotFound();
             }
 
-            var pupil = await _context.Users
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var pupil = await _context.Pupils
+                .Include(p => p.AppUser)
+                .FirstOrDefaultAsync(m => m.PupilId == id);
             if (pupil == null)
             {
                 return NotFound();
@@ -46,6 +48,7 @@ namespace WebApp.Controllers
         // GET: Pupils/Create
         public IActionResult Create()
         {
+            ViewData["AppUserId"] = new SelectList(_context.Users, "Id", "Id");
             return View();
         }
 
@@ -54,7 +57,7 @@ namespace WebApp.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,UserName,NormalizedUserName,Email,NormalizedEmail,EmailConfirmed,PasswordHash,SecurityStamp,ConcurrencyStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEnd,LockoutEnabled,AccessFailedCount")] Pupil pupil)
+        public async Task<IActionResult> Create([Bind("PupilId,AppUserId")] Pupil pupil)
         {
             if (ModelState.IsValid)
             {
@@ -62,6 +65,7 @@ namespace WebApp.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["AppUserId"] = new SelectList(_context.Users, "Id", "Id", pupil.AppUserId);
             return View(pupil);
         }
 
@@ -73,11 +77,12 @@ namespace WebApp.Controllers
                 return NotFound();
             }
 
-            var pupil = await _context.Users.FindAsync(id);
+            var pupil = await _context.Pupils.FindAsync(id);
             if (pupil == null)
             {
                 return NotFound();
             }
+            ViewData["AppUserId"] = new SelectList(_context.Users, "Id", "Id", pupil.AppUserId);
             return View(pupil);
         }
 
@@ -86,9 +91,9 @@ namespace WebApp.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,UserName,NormalizedUserName,Email,NormalizedEmail,EmailConfirmed,PasswordHash,SecurityStamp,ConcurrencyStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEnd,LockoutEnabled,AccessFailedCount")] Pupil pupil)
+        public async Task<IActionResult> Edit(int id, [Bind("PupilId,AppUserId")] Pupil pupil)
         {
-            if (id != pupil.Id)
+            if (id != pupil.PupilId)
             {
                 return NotFound();
             }
@@ -102,7 +107,7 @@ namespace WebApp.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PupilExists(pupil.Id))
+                    if (!PupilExists(pupil.PupilId))
                     {
                         return NotFound();
                     }
@@ -113,6 +118,7 @@ namespace WebApp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["AppUserId"] = new SelectList(_context.Users, "Id", "Id", pupil.AppUserId);
             return View(pupil);
         }
 
@@ -124,8 +130,9 @@ namespace WebApp.Controllers
                 return NotFound();
             }
 
-            var pupil = await _context.Users
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var pupil = await _context.Pupils
+                .Include(p => p.AppUser)
+                .FirstOrDefaultAsync(m => m.PupilId == id);
             if (pupil == null)
             {
                 return NotFound();
@@ -139,15 +146,15 @@ namespace WebApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var pupil = await _context.Users.FindAsync(id);
-            _context.Users.Remove(pupil);
+            var pupil = await _context.Pupils.FindAsync(id);
+            _context.Pupils.Remove(pupil);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool PupilExists(int id)
         {
-            return _context.Users.Any(e => e.Id == id);
+            return _context.Pupils.Any(e => e.PupilId == id);
         }
     }
 }

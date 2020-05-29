@@ -29,4 +29,12 @@
       </Content>
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Pupils\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Pupils\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Pupils\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Pupils\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Pupils\Index.cshtml" />
+    </ItemGroup>
+
 </Project>
