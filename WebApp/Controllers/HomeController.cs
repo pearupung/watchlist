@@ -68,12 +68,19 @@ namespace WebApp.Controllers
         [HttpPost]
         public async Task<IActionResult> InstructorCode(HomeInstructorDTO dto)
         {
-            var user = await _userManager.GetUserAsync(User);
-            if (!ModelState.IsValid || !user.IsInstructor || !user.Instructor.RegisterCode.Equals(dto.EntryCode))
+            /*
+            if (!ModelState.IsValid)
             {
                 return View(dto);
-            }
-            return View();
+            }*/
+            
+            return RedirectToAction("InstructorSession");
+        }
+
+        public async Task<IActionResult> InstructorSession()
+        {
+            var dto = new InstructorSessionDTO();
+            return View(dto);
         }
 
         public IActionResult Privacy()
